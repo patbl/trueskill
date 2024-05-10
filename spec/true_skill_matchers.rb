@@ -19,7 +19,7 @@ module TrueSkillMatchers
       "expected rating #{@target.to_s} to be equal to #{@expected.to_s} #{failure_info}"
     end
     
-    def negative_failure_message
+    def failure_message_when_negated
       "expected rating #{@target.to_s} not to be equal to #{@expected.to_s} #{failure_info}"
     end
     
