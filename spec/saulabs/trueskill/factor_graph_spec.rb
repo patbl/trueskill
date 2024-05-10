@@ -116,7 +116,7 @@ describe Saulabs::TrueSkill::FactorGraph, "Integration Tests" do
         describe "#@skill_update" do
           it "should have a Boolean @skills_additive = false" do
             @graph = TrueSkill::FactorGraph.new(draw_results, {:skills_additive => false})
-            expect(@graph.skills_additive).to be_false
+            expect(@graph.skills_additive).to be false
           end
 
           it "should update the mean of the first player in team1 to 25.0 after draw" do
