@@ -22,7 +22,7 @@ describe "Saulabs::TrueSkill::ScoreBasedBayesianRating: 2 vs 2: team 1=> 1.0, te
     it "should update the mean of the first player in team1: " do
       test = TrueSkill::ScoreBasedBayesianRating.new(@results, {:gamma => 1, :beta => 10})
       test.update_skills
-      @teams[0][0].mean.should_not be_within(tolerance).of(25.0)
+      expect(@teams[0][0].mean).not_to be_within(tolerance).of(25.0)
     end
   end
   describe "#update_skills " do
@@ -30,7 +30,7 @@ describe "Saulabs::TrueSkill::ScoreBasedBayesianRating: 2 vs 2: team 1=> 1.0, te
     it "should update the mean of the first player in team1: skills additive => false" do
       test = TrueSkill::ScoreBasedBayesianRating.new(@results, {:gamma => 1, :beta => 10, :skills_additive => false})
       test.update_skills
-      @teams[0][0].mean.should_not be_within(tolerance).of(25.0)
+      expect(@teams[0][0].mean).not_to be_within(tolerance).of(25.0)
     end
   end
 end
@@ -52,7 +52,7 @@ describe "Saulabs::TrueSkill::ScoreBasedBayesianRating: 2 vs 2: team 1=> -1.0, t
     it "should update the mean of the first player in team1: " do
       test = TrueSkill::ScoreBasedBayesianRating.new(@results, {:gamma => 1, :beta => 10})
       test.update_skills
-      @teams[0][0].mean.should_not be_within(tolerance).of(25.0)
+      expect(@teams[0][0].mean).not_to be_within(tolerance).of(25.0)
     end
   end
   describe "#update_skills " do
@@ -60,7 +60,7 @@ describe "Saulabs::TrueSkill::ScoreBasedBayesianRating: 2 vs 2: team 1=> -1.0, t
     it "should update the mean of the first player in team1: skills additive => false" do
       test = TrueSkill::ScoreBasedBayesianRating.new(@results, {:gamma => 1, :beta => 10, :skills_additive => false})
       test.update_skills
-      @teams[0][0].mean.should_not be_within(tolerance).of(25.0)
+      expect(@teams[0][0].mean).not_to be_within(tolerance).of(25.0)
     end
   end
 end
@@ -83,7 +83,7 @@ describe "Saulabs::TrueSkill::ScoreBasedBayesianRating: 1 vs 3: team1 => -1.0, t
     it "should update the mean of the first player in team1: " do
       test = TrueSkill::ScoreBasedBayesianRating.new(@results, {:gamma => 1, :beta => 10})
       test.update_skills
-      @teams[0][0].mean.should_not be_within(tolerance).of(25.0)
+      expect(@teams[0][0].mean).not_to be_within(tolerance).of(25.0)
     end
   end
   describe "#update_skills " do
@@ -91,7 +91,7 @@ describe "Saulabs::TrueSkill::ScoreBasedBayesianRating: 1 vs 3: team1 => -1.0, t
     it "should update the mean of the first player in team1: skills additive => false" do
       test = TrueSkill::ScoreBasedBayesianRating.new(@results, {:gamma => 1, :beta => 10, :skills_additive => false})
       test.update_skills
-      @teams[0][0].mean.should_not be_within(tolerance).of(25.0)
+      expect(@teams[0][0].mean).not_to be_within(tolerance).of(25.0)
     end
   end
 end
@@ -113,7 +113,7 @@ describe "Saulabs::TrueSkill::ScoreBasedBayesianRating: 1 vs 3: team1 => 1.0, te
     it "should update the mean of the first player in team1: " do
       test = TrueSkill::ScoreBasedBayesianRating.new(@results, {:gamma => 1, :beta => 10})
       test.update_skills
-      @teams[0][0].mean.should_not be_within(tolerance).of(25.0)
+      expect(@teams[0][0].mean).not_to be_within(tolerance).of(25.0)
     end
   end
   describe "#update_skills " do
@@ -121,7 +121,7 @@ describe "Saulabs::TrueSkill::ScoreBasedBayesianRating: 1 vs 3: team1 => 1.0, te
     it "should update the mean of the first player in team1: skills additive => false" do
       test = TrueSkill::ScoreBasedBayesianRating.new(@results, {:gamma => 1, :beta => 10, :skills_additive => false})
       test.update_skills
-      @teams[0][0].mean.should_not be_within(tolerance).of(25.0)
+      expect(@teams[0][0].mean).not_to be_within(tolerance).of(25.0)
     end
   end
 end
@@ -145,7 +145,7 @@ describe "Saulabs::TrueSkill::ScoreBasedBayesianRating: 1 vs 3: team1 => 100.0, 
     it "should update the mean of the first player in team1: " do
       test = TrueSkill::ScoreBasedBayesianRating.new(@results, {:gamma => 1, :beta => 10})
       test.update_skills
-      @teams[0][0].mean.should_not be_within(tolerance).of(25.0)
+      expect(@teams[0][0].mean).not_to be_within(tolerance).of(25.0)
     end
   end
   describe "#update_skills " do
@@ -153,7 +153,7 @@ describe "Saulabs::TrueSkill::ScoreBasedBayesianRating: 1 vs 3: team1 => 100.0, 
     it "should update the mean of the first player in team1: skills additive => false" do
       test = TrueSkill::ScoreBasedBayesianRating.new(@results, {:gamma => 1, :beta => 10, :skills_additive => false})
       test.update_skills
-      @teams[0][0].mean.should_not be_within(tolerance).of(25.0)
+      expect(@teams[0][0].mean).not_to be_within(tolerance).of(25.0)
     end
   end
 end
@@ -175,7 +175,7 @@ describe "Saulabs::TrueSkill::ScoreBasedBayesianRating: 1 vs 3: team1 => -100.0,
     it "should update the mean of the first player in team1: " do
       test = TrueSkill::ScoreBasedBayesianRating.new(@results, {:gamma => 1, :beta => 10})
       test.update_skills
-      @teams[0][0].mean.should_not be_within(tolerance).of(25.0)
+      expect(@teams[0][0].mean).not_to be_within(tolerance).of(25.0)
     end
   end
   describe "#update_skills " do
@@ -183,7 +183,7 @@ describe "Saulabs::TrueSkill::ScoreBasedBayesianRating: 1 vs 3: team1 => -100.0,
     it "should update the mean of the first player in team1: skills additive => false" do
       test = TrueSkill::ScoreBasedBayesianRating.new(@results, {:gamma => 1, :beta => 10, :skills_additive => false})
       test.update_skills
-      @teams[0][0].mean.should_not be_within(tolerance).of(25.0)
+      expect(@teams[0][0].mean).not_to be_within(tolerance).of(25.0)
     end
   end
 end
@@ -205,7 +205,7 @@ describe "Saulabs::TrueSkill::ScoreBasedBayesianRating: 1 vs 3: Draw: team1 => 1
     it "should update the mean of the first player in team1: " do
       test = TrueSkill::ScoreBasedBayesianRating.new(@results, {:gamma => 1, :beta => 10})
       test.update_skills
-      @teams[0][0].mean.should_not be_within(tolerance).of(25.0)
+      expect(@teams[0][0].mean).not_to be_within(tolerance).of(25.0)
     end
   end
   describe "#update_skills " do
@@ -213,7 +213,7 @@ describe "Saulabs::TrueSkill::ScoreBasedBayesianRating: 1 vs 3: Draw: team1 => 1
     it "should update the mean of the first player in team1: skills additive => false" do
       test = TrueSkill::ScoreBasedBayesianRating.new(@results, {:gamma => 1, :beta => 10, :skills_additive => false})
       test.update_skills
-      @teams[0][0].mean.should be_within(tolerance).of(25.0)
+      expect(@teams[0][0].mean).to be_within(tolerance).of(25.0)
     end
   end
 end
@@ -236,7 +236,7 @@ describe "Saulabs::TrueSkill::ScoreBasedBayesianRating: 1 vs 3: Draw: team1 => 1
     it "should update the mean of the first player in team1: " do
       test = TrueSkill::ScoreBasedBayesianRating.new(@results, {:gamma => 1, :beta => 10})
       test.update_skills
-      @teams[0][0].mean.should be_within(tolerance).of(25.0)
+      expect(@teams[0][0].mean).to be_within(tolerance).of(25.0)
     end
   end
 

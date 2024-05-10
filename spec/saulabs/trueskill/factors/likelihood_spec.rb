@@ -12,12 +12,12 @@ describe TrueSkill::Factors::Likelihood do
   describe "#update_message_at" do
     
     it "should return a difference of 0.0" do
-      @factor.update_message_at(0).should be_within(tolerance).of(0.0)
+      expect(@factor.update_message_at(0)).to be_within(tolerance).of(0.0)
     end
     
     it "should return a difference of 0.833066 for the second message" do
       @factor.update_message_at(0)
-      @factor.update_message_at(1).should be_within(tolerance).of(0.833066)
+      expect(@factor.update_message_at(1)).to be_within(tolerance).of(0.833066)
     end
   
   end
@@ -25,7 +25,7 @@ describe TrueSkill::Factors::Likelihood do
   describe "#log_normalization" do
     
     it "should be 0.0" do
-      @factor.log_normalization.should == 0.0
+      expect(@factor.log_normalization).to eq(0.0)
     end
   
   end

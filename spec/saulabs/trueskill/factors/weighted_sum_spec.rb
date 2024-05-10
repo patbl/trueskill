@@ -16,12 +16,12 @@ describe TrueSkill::Factors::Prior do
   describe "weights" do
     
     it "should setup the weights correctly" do
-      @factor.weights[0][0].should be_within(tolerance).of(0.5)
-      @factor.weights[1][0].should be_within(tolerance).of(-1.4)
-      @factor.weights[2][0].should be_within(tolerance).of(-0.7142)
-      @factor.weights[2][1].should be_within(tolerance).of(-1.14285)
-      @factor.weights[3][0].should be_within(tolerance).of(-0.625)
-      @factor.weights[3][2].should be_within(tolerance).of(1.25)
+      expect(@factor.weights[0][0]).to be_within(tolerance).of(0.5)
+      expect(@factor.weights[1][0]).to be_within(tolerance).of(-1.4)
+      expect(@factor.weights[2][0]).to be_within(tolerance).of(-0.7142)
+      expect(@factor.weights[2][1]).to be_within(tolerance).of(-1.14285)
+      expect(@factor.weights[3][0]).to be_within(tolerance).of(-0.625)
+      expect(@factor.weights[3][2]).to be_within(tolerance).of(1.25)
     end
     
   end
@@ -29,12 +29,12 @@ describe TrueSkill::Factors::Prior do
   describe "weights_squared" do
     
     it "should setup the squared weights correctly" do
-      @factor.weights_squared[0][0].should be_within(tolerance).of(0.25)
-      @factor.weights_squared[1][0].should be_within(tolerance).of(1.96)
-      @factor.weights_squared[2][0].should be_within(tolerance).of(0.51)
-      @factor.weights_squared[2][1].should be_within(tolerance).of(1.3061)
-      @factor.weights_squared[3][0].should be_within(tolerance).of(0.3906)
-      @factor.weights_squared[3][2].should be_within(tolerance).of(1.5625)
+      expect(@factor.weights_squared[0][0]).to be_within(tolerance).of(0.25)
+      expect(@factor.weights_squared[1][0]).to be_within(tolerance).of(1.96)
+      expect(@factor.weights_squared[2][0]).to be_within(tolerance).of(0.51)
+      expect(@factor.weights_squared[2][1]).to be_within(tolerance).of(1.3061)
+      expect(@factor.weights_squared[3][0]).to be_within(tolerance).of(0.3906)
+      expect(@factor.weights_squared[3][2]).to be_within(tolerance).of(1.5625)
     end
     
   end
@@ -42,12 +42,12 @@ describe TrueSkill::Factors::Prior do
   describe "index_order" do
     
     it "should setup the index order correctly" do
-      @factor.index_order[0][0].should == 0
-      @factor.index_order[1][0].should == 1
-      @factor.index_order[2][0].should == 2
-      @factor.index_order[2][1].should == 1
-      @factor.index_order[2][2].should == 3
-      @factor.index_order[3][1].should == 1
+      expect(@factor.index_order[0][0]).to eq(0)
+      expect(@factor.index_order[1][0]).to eq(1)
+      expect(@factor.index_order[2][0]).to eq(2)
+      expect(@factor.index_order[2][1]).to eq(1)
+      expect(@factor.index_order[2][2]).to eq(3)
+      expect(@factor.index_order[3][1]).to eq(1)
     end
     
   end
@@ -55,7 +55,7 @@ describe TrueSkill::Factors::Prior do
   describe "#update_message_at" do
     
     it "should return a difference of 4.50116 for message 0" do
-      @factor.update_message_at(0).should be_within(tolerance).of(4.50116)
+      expect(@factor.update_message_at(0)).to be_within(tolerance).of(4.50116)
     end
   
   end

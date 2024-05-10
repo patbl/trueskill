@@ -13,15 +13,15 @@ describe TrueSkill::Layers::PriorToSkills do
   describe "#build" do
 
     it "should add 4 factors" do
-      lambda {
+      expect {
         @layer.build
-      }.should change(@layer.factors, :size).by(4)
+      }.to change(@layer.factors, :size).by(4)
     end
 
     it "should add 3 output variables" do
-      lambda {
+      expect {
         @layer.build
-      }.should change(@layer.output, :size).by(3)
+      }.to change(@layer.output, :size).by(3)
     end
 
   end
@@ -33,7 +33,7 @@ describe TrueSkill::Layers::PriorToSkills do
     end
 
     it "should return a sequence-schedule" do
-      @layer.prior_schedule.should be_kind_of(TrueSkill::Schedules::Sequence)
+      expect(@layer.prior_schedule).to be_kind_of(TrueSkill::Schedules::Sequence)
     end
 
   end

@@ -13,18 +13,18 @@ describe Saulabs::TrueSkill::FactorGraph, "Unit Tests" do
   describe "#update_skills" do
     it "should update the mean of the first player in team1 to 30.38345" do
       @graph.update_skills
-      @skill.mean.should be_within(tolerance).of(30.38345)
+      expect(@skill.mean).to be_within(tolerance).of(30.38345)
     end
 
     it "should update the deviation of the first player in team1 to 3.46421" do
       @graph.update_skills
-      @skill.deviation.should be_within(tolerance).of(3.46421)
+      expect(@skill.deviation).to be_within(tolerance).of(3.46421)
     end
   end
 
   describe "#draw_margin" do
     it "should be -0.998291 for diff 0.740466" do
-      @graph.draw_margin.should be_within(tolerance).of(0.740466)
+      expect(@graph.draw_margin).to be_within(tolerance).of(0.740466)
     end
   end
 end
@@ -59,11 +59,11 @@ describe Saulabs::TrueSkill::FactorGraph, "Integration Tests" do
         end
 
         it "should change first players rating to [29.395832, 7.1714755]" do
-          teams[0][0].should eql_rating(29.395832, 7.1714755)
+          expect(teams[0][0]).to eql_rating(29.395832, 7.1714755)
         end
 
         it "should change second players rating to [20.6041679, 7.1714755]" do
-          teams[1][0].should eql_rating(20.6041679, 7.1714755)
+          expect(teams[1][0]).to eql_rating(20.6041679, 7.1714755)
         end
 
       end
@@ -76,11 +76,11 @@ describe Saulabs::TrueSkill::FactorGraph, "Integration Tests" do
       end
 
       it "should change first players rating to [25.0, 6.4575196]" do
-        teams[0][0].should eql_rating(25.0, 6.4575196)
+        expect(teams[0][0]).to eql_rating(25.0, 6.4575196)
       end
 
       it "should change second players rating to [25.0, 6.4575196]" do
-        teams[1][0].should eql_rating(25.0, 6.4575196)
+        expect(teams[1][0]).to eql_rating(25.0, 6.4575196)
       end
 
     end
@@ -95,11 +95,11 @@ describe Saulabs::TrueSkill::FactorGraph, "Integration Tests" do
       end
 
       it "should change first players rating to [31.6623, 7.1374]" do
-        teams[0][0].should eql_rating(31.662301, 7.1374459)
+        expect(teams[0][0]).to eql_rating(31.662301, 7.1374459)
       end
 
       it "should change second players mean to [35.0107, 7.9101]" do
-        teams[1][0].should eql_rating(35.010653, 7.910077)
+        expect(teams[1][0]).to eql_rating(35.010653, 7.910077)
       end
 
     end
@@ -116,14 +116,14 @@ describe Saulabs::TrueSkill::FactorGraph, "Integration Tests" do
         describe "#@skill_update" do
           it "should have a Boolean @skills_additive = false" do
             @graph = TrueSkill::FactorGraph.new(draw_results, {:skills_additive => false})
-            @graph.skills_additive.should be_false
+            expect(@graph.skills_additive).to be_false
           end
 
           it "should update the mean of the first player in team1 to 25.0 after draw" do
             @graph = TrueSkill::FactorGraph.new(draw_results, {:skills_additive => false})
 
             @graph.update_skills
-            teams[0][0].mean.should be_within(tolerance).of(25.0)
+            expect(teams[0][0].mean).to be_within(tolerance).of(25.0)
           end
         end
       end

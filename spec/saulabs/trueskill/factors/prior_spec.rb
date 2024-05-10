@@ -11,7 +11,7 @@ describe TrueSkill::Factors::Prior do
   describe "#update_message_at" do
     
     it "should return a difference of 73.33333" do
-      @factor.update_message_at(0).should be_within(tolerance).of(73.33333)
+      expect(@factor.update_message_at(0)).to be_within(tolerance).of(73.33333)
     end
   
   end
@@ -19,7 +19,7 @@ describe TrueSkill::Factors::Prior do
   describe "#log_normalization" do
     
     it "should be 0.0" do
-      @factor.log_normalization.should == 0.0
+      expect(@factor.log_normalization).to eq(0.0)
     end
   
   end
